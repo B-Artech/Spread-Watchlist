@@ -36,7 +36,7 @@ To use this watchlist, you'll need your own API key. You can obtain one for free
 [Get your Alpha Vantage API KEY](https://www.alphavantage.co/support/#api-key)
 Place your API Key in the fist line in JavaScript between quotes
 
-[const apiKey = 'YOUR KEY GOES HERE'](\src\js\script.js)
+[const apiKey = 'YOUR KEY GOES HERE'](script.js)
 
 Please note that if your watchlist contains more than five tickers, it may not update all of your positions with a single request. You may need to make multiple requests to ensure the update of all positions.
 
