@@ -66,4 +66,4 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 
 ## License
 
-This project is licensed under the [Bartech_Studio](\notes.md)
+This project is licensed under the [Bartech_Studio](notes.md)
