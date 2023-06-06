@@ -1,0 +1,326 @@
+@import './color';
+@import './mixin';
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	// border: 1px solid red;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	font-family: lato, 'sans-serif';
+	background-color: #333;
+}
+
+h1 {
+	position: absolute;
+	margin: 1em 1em 2em;
+	padding: 20px;
+	width: fit-content;
+	text-transform: uppercase;
+	color: $light-white;
+	font-weight: 300;
+	background: $h1-background;
+	border-radius: 4px;
+}
+
+h1:after {
+	@include shadow;
+}
+
+input {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 100px;
+	height: 25px;
+	border: none;
+	font-size: 18px;
+	border-bottom: 1px solid $light-white;
+	outline: none;
+	background: none;
+	color: $light-white;
+}
+
+select {
+	background: $sector-bg;
+	height: 25px;
+	font-size: 1rem;
+	border: none;
+	border-bottom: 1px solid $light-white;
+	outline: none;
+	color: $light-white;
+}
+
+label {
+	margin-bottom: 19px;
+	font-weight: 300;
+}
+
+.watchlist {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+
+	.hero-img {
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		@include heroImages('/dist/img/skyscrapers-g835b3e6bc_1280.jpg');
+		z-index: -100;
+	}
+
+	&__rows {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: center;
+		text-transform: uppercase;
+		margin: 10em 0 1em;
+		font-size: 18px;
+		list-style: none;
+		color: $rows-fonts;
+		min-height: 70px;
+
+		&--tickerAdd {
+			height: 25px;
+			display: flex;
+			gap: 0.5em;
+		}
+
+		&--label {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			padding: 1em 2em;
+			margin: 2px;
+			@include backgroundBox;
+			@include delay;
+			z-index: 10;
+
+			.dropdown {
+				position: absolute;
+				top: 110px;
+				left: 0;
+				
+				li {
+					max-width: 400px;
+					font-size: .8rem;
+					padding: 0.2em;
+					color: $links;
+					list-style: none;
+					background-color: #070127b4;
+					opacity: 0;
+					animation: menu3 0.5s forwards;
+					cursor: pointer;
+					transition: color 0.3s;
+				}
+
+				li:hover {
+					color: $white;
+				}
+			}
+
+			@keyframes menu3 {
+				from {
+					opacity: 0;
+					transform: scale(0.8) translateY(-40px);
+				}
+
+				to {
+					opacity: 1;
+					transform: scale(1) translateY(0);
+				}
+			}
+		}
+
+		//add price button
+		&--btnAdd {
+			@include BtnStyle;
+		}
+		&--btnAdd::after {
+			@include Btn;
+		}
+		&--btnAdd:hover::after {
+			@include BtnHover;
+		}
+
+		//add to watchlist button
+		.btn {
+			margin-bottom: 1.4em;
+			margin-left: 1em;
+			@include BtnStyle;
+		}
+
+		.btn::after {
+			@include Btn;
+		}
+
+		.btn:hover::after {
+			@include BtnHover;
+		}
+	}
+}
+
+.newWatchlistBox {
+	max-width: max-content;
+	margin: 0 auto;
+	padding: 1em 2em;
+	color: $light-white;
+	@include backgroundBox;
+	z-index: 0;
+
+	.table {
+		border-collapse: collapse;
+
+		&__head {
+			tr {
+				padding-bottom: 30px;
+			}
+
+			th {
+				padding: 0em 1em 2em;
+				font-size: 16px;
+				font-weight: 300;
+
+				.updateBtn {
+					@include BtnStyle;
+				}
+
+				.updateBtn::after {
+					@include Btn;
+				}
+
+				.updateBtn:hover::after {
+					@include BtnHover;
+				}
+			}
+		}
+
+		&__body {
+			text-align: center;
+			border-bottom: 1px solid $line;
+
+			td {
+				padding: 10px;
+				transition: 0.6s;
+
+				// delete row button
+				button {
+					border: none;
+					background-color: $delete-background;
+					color: $light-white;
+					padding: 5px;
+					border-radius: 2px;
+					cursor: pointer;
+					transition: opacity 0.3s linear;
+					opacity: 0;
+				}
+			}
+
+			tr:nth-child(odd) {
+				background: #eeeeee24;
+			}
+
+			tr:nth-child(odd):hover button {
+				opacity: 1;
+				background: none;
+			}
+			tr:nth-child(even):hover button {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.entryDate {
+	width: 130px;
+}
+
+.footer {
+	display: flex;
+	padding-left: 1em;
+	background-color: $footerBg;
+	height: 100vh;
+	width: 150px;
+
+	h4 {
+		font-size: 18px;
+		color: $white;
+		text-transform: capitalize;
+		margin-bottom: 35px;
+		font-weight: 500;
+		position: relative;
+	}
+
+	h4::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -10px;
+		background-color: $footerLine;
+		height: 2px;
+		box-sizing: border-box;
+		width: 50px;
+	}
+
+	&__row {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	.footer-col {
+		a {
+			font-size: 16px;
+			text-transform: capitalize;
+			text-decoration: none;
+			font-weight: 300;
+			color: $links;
+			display: block;
+			transition: all 0.3s ease;
+		}
+		ul {
+			li {
+				a:hover {
+					color: $white;
+					padding-left: 8px;
+				}
+			}
+		}
+
+		ul {
+			list-style: none;
+			li:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	.social-links {
+		a {
+			display: inline-block;
+			height: 29px;
+			width: 29px;
+			background-color: $linkBg;
+			margin: 0 10px 10px 0;
+			text-align: center;
+			line-height: 29px;
+			border-radius: 50%;
+			color: $light-white;
+			transition: all 0.5s ease;
+		}
+
+		a:hover {
+			color: $fas;
+			background-color: $white;
+		}
+	}
+}

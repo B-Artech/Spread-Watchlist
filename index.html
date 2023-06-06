@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Watchlist</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oxygen:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/style.min.css">
+    <script src="https://kit.fontawesome.com/56e5766715.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    
+    <h1 class="header">Spread Watchlist Ideas</h1>
+    <div class="watchlist">
+        <div class="hero-img"></div>
+        <ul class="watchlist__rows">
+
+            <li class="watchlist__rows--label">
+                <label class="sector" for="sector">Sectors</label>
+                <select name="sectort" id="sector" style="text-align: center;">
+                    <option value="">Choose sector</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Health Care">Health Care</option>
+                    <option value=" Financials"> Financials</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Energy">Energy</option>
+                    <option value="Materials">Materials</option>
+                    <option value="Consumer Discretionary">Consumer Discretionary</option>
+                    <option value="Industrials">Industrials</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Consumer Staples">Consumer Staples</option>
+                    <option value="Communications">Communications</option>
+                </select>
+            </li>
+
+            <li class="watchlist__rows--label">
+                <label class="ticker" for="ticker">Ticker</label>
+                <div class="watchlist__rows--tickerAdd">
+                    <input type="text" id="ticker-one" name="input1" placeholder="eg: AMZN">
+                    <input type="text" id="ticker-two" name="input2" placeholder="eg: HRL">
+                    <button class="watchlist__rows--btnAdd" id="PriceBtn">+</button>
+                </div>
+                <ul class="dropdown" id="searchResults">
+                    <!-- <li>AAAFX - One Choice Blend+ 2015 Port USD Class INV</li>
+                    <li>AA - Alcoa Corp</li>
+                    <li>AAA - AXS FIRST PRIORITY CLO BOND ETF</li>
+                    <li>AA2.FRK - Amada Co. Ltd</li>
+                    <li>AA4.LON - Amedeo Air Four Plus Limited</li>
+                    <li>AA9.FRK - Alfa Laval AB (publ)</li>
+                    <li>AAAAX - DWS RREEF REAL ASSETS FUND CLASS A</li>
+                    <li>AAACX - Alpha Alternative Assets Fd. USD</li>
+                    <li>AAADX - ALPINE RISING DIVIDEND FUND CLASS A</li>
+                    <li>AAAEX - VIRTUS KAR HEALTH SCIENCES FUND P</li> -->
+                </ul>
+            </li>
+            <li class="watchlist__rows--label">
+                <label class="long" for="long">Long-Entry</label>
+                <input type="text" id="long" name="input1" placeholder="Price">
+            </li>
+            <li class="watchlist__rows--label">
+                <label class="short" for="short">Short-Entry</label>
+                <input type="text" id="short" name="input2" placeholder="Price">
+            </li>
+            <li class="watchlist__rows--label">
+                <label class="spread" for="spread">Spread-Entry</label>
+                <input type="text" id="spread" name="input" placeholder="Spread">
+            </li>
+            <li class="watchlist__rows--label">
+                <label class="spread" for="spread">Date-Entry</label>
+                <input placeholder='Enter Date' class='entryDate' id="entryDate" onfocus="(this.type='date')"
+                    onblur="(this.type='text')">
+            </li>
+            <button class="btn" id="addToWatchlist">Add To Watchlist</button>
+        </ul>
+        <div class="newWatchlistBox">
+            <table class="table">
+                <thead class="table__head">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Sector</th>
+                        <th scope="col">Nominator</th>
+                        <th scope="col">Denominator</th>
+                        <th scope="col">Long Entry</th>
+                        <th scope="col">Short Entry</th>
+                        <th scope="col">Spread Entry</th>
+                        <th scope="col">Date Entry</th>
+                        <th scope="col">Last$</th>
+                        <th scope="col">Last$</th>
+                        <th scope="col">TDY Spread</th>
+                        <th scope="col">% Spread Since Inception</th>
+                        <th><button id="updateBtn" class="updateBtn">Update Prices</button></th>
+                    </tr>
+                </thead>
+                <tbody class="table__body" id="watchlistRows"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+            <div class="footer__row">
+                <div class="footer-col">
+                    <h4>reserch</h4>
+                    <ul>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1vprsdxFisuioq4F7rjT8rURJBOfLIM2Q1zfsq_wP6fM/edit?usp=sharing" target=”_blank”>US Matrix</a></li>
+                        <li><a href="https://www.zacks.com/screening/stock-screener" target=”_blank”>Screener</a></li>
+                        <li><a href="https://www.nasdaq.com/market-activity/stocks" target=”_blank”>Market Activity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Charts</h4>
+                    <ul>
+                        <li><a href="https://www.tradingview.com" target=”_blank”>TradingView</a></li>
+                        <li><a href="https://stockrow.com/" target=”_blank”>Stockrow</a></li>
+                        <li><a href="https://www.marketscreener.com/" target=”_blank”>Markets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Economics</h4>
+                    <ul>
+                        <li><a href="https://fred.stlouisfed.org/" target=”_blank”>fred</a></li>
+                        <li><a href="https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/" target=”_blank”>ISM</a></li>
+                        <li><a href="http://www.sca.isr.umich.edu/" target=”_blank”>UMCSI</a></li>
+                        <li><a href="https://stockcharts.com/freecharts/yieldcurve.php" target=”_blank”>Yield Curve</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/B-Artech" target=”_blank”><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/Barrtezz84" target=”_blank”><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/bartek-staskiewicz-a57b901a/" target=”_blank”><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+   </footer>
+
+    <script src="./dist/js/script.min.js"></script>
+</body>
+
+</html>
