@@ -69,6 +69,3 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Submit a pull request describing your changes.
 
-## License
-
-This project is licensed under the [Bartech_Studio](\Vnotes.md)
