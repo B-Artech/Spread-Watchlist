@@ -72,7 +72,7 @@
                 <input type="text" id="spread" name="input" placeholder="Spread">
             </li>
             <li class="watchlist__rows--label">
-                <label class="spread" for="spread">Date-Entry</label>
+                <label class="spread" for="spread">Entry-Date</label>
                 <input placeholder='Enter Date' class='entryDate' id="entryDate" onfocus="(this.type='date')"
                     onblur="(this.type='text')">
             </li>
@@ -84,16 +84,16 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Sector</th>
-                        <th scope="col">Nominator</th>
-                        <th scope="col">Denominator</th>
-                        <th scope="col">Long Entry</th>
-                        <th scope="col">Short Entry</th>
-                        <th scope="col">Spread Entry</th>
-                        <th scope="col">Date Entry</th>
-                        <th scope="col">Last$</th>
-                        <th scope="col">Last$</th>
-                        <th scope="col">TDY Spread</th>
-                        <th scope="col">% Spread Since Inception</th>
+                        <th scope="col">Ticker Long</th>
+                        <th scope="col">Ticker Short</th>
+                        <th scope="col">Entry Price</th>
+                        <th scope="col">Entry Price</th>
+                        <th scope="col">Entry Spread</th>
+                        <th scope="col">Entry Date</th>
+                        <th scope="col">Last P</th>
+                        <th scope="col">Last P</th>
+                        <th scope="col">Current Spread</th>
+                        <th scope="col">% Var Since inception</th>
                         <th><button id="updateBtn" class="updateBtn">Update Prices</button></th>
                     </tr>
                 </thead>
@@ -105,15 +105,15 @@
     <footer class="footer">
             <div class="footer__row">
                 <div class="footer-col">
-                    <h4>reserch</h4>
+                    <h4>Data</h4>
                     <ul>
-                          <li><a href=https://docs.google.com/spreadsheets/d/15Ely28LjE2kyvPqY-jLiuLa_RdFhKxoR/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true target=”_blank”>PMI Data</a></li>
+                        <li><a href=https://docs.google.com/spreadsheets/d/15Ely28LjE2kyvPqY-jLiuLa_RdFhKxoR/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true target=”_blank”>PMI Data</a></li>
+                        <li><a href=https://docs.google.com/spreadsheets/d/1Ip_Aikm0DbV4vSQzv_q5LGyIhwibZ5R1/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true target=”_blank”>UMCSI</a></li>
+                        <li><a href=https://docs.google.com/spreadsheets/d/1zt15AsXoBsdN54bRywd1tPtwXQ721Q07/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true target=”_blank”>US-GDP</a></li>
+                        <li><a href=https://docs.google.com/spreadsheets/d/1nfgqNqN1Yfa5HpvBLMNmJaKaixb0AWw9/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=truetarget=”_blank”>EU-ESI</a></li>
                         <li><a href="https://docs.google.com/spreadsheets/d/1vprsdxFisuioq4F7rjT8rURJBOfLIM2Q1zfsq_wP6fM/edit?usp=sharing" target=”_blank”>US Matrix</a></li>
                         <li><a href=https://docs.google.com/spreadsheets/d/1AVECjna0d0FP-Eqax8BiN8ohrHu_Aa8W/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true target=”_blank”>Watch-list</a></li>
                         <li><a href=https://docs.google.com/spreadsheets/d/1ChfLoZcleUfPJHjghM3FC2ZhK_OPn5V3/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true target=”_blank”>Spread DIS</a></li>
-                        <br/>
-                        <li><a href="https://www.zacks.com/screening/stock-screener" target=”_blank”>Screener</a></li>
-                        <li><a href="https://www.nasdaq.com/market-activity/stocks" target=”_blank”>Market Activity</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -122,14 +122,18 @@
                         <li><a href="https://www.tradingview.com" target=”_blank”>TradingView</a></li>
                         <li><a href="https://stockrow.com/" target=”_blank”>Stockrow</a></li>
                         <li><a href="https://www.marketscreener.com/" target=”_blank”>Markets</a></li>
+                        <li><a href="https://www.nasdaq.com/market-activity/stocks" target=”_blank”>Market Activity</a></li>
+                        <li><a href="https://www.zacks.com/screening/stock-screener" target=”_blank”>Screener</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Economics</h4>
                     <ul>
                         <li><a href="https://fred.stlouisfed.org/" target=”_blank”>fred</a></li>
+                        <li><a href="https://www.pmi.spglobal.com/Public/Release/PressReleases?language=en" target=”_blank”>Global PMI</a></li>
                         <li><a href="https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/" target=”_blank”>ISM</a></li>
                         <li><a href="http://www.sca.isr.umich.edu/" target=”_blank”>UMCSI</a></li>
+                        <li><a href="https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/business-and-consumer-surveys/download-business-and-consumer-survey-data/time-series_en#main-indicators-esi-eei-sectoral-cis" target=”_blank”>EU-ESI</a></li>
                         <li><a href="https://stockcharts.com/freecharts/yieldcurve.php" target=”_blank”>Yield Curve</a></li>
                     </ul>
                 </div>
