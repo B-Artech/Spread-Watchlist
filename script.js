@@ -1,4 +1,4 @@
-const apiKey = 'GHF2ZQQLEQ3ZQM18'
+const apiKey = ''
 const apiUrl = 'https://www.alphavantage.co/query'
 
 const nominatorInput = document.getElementById('ticker-one')
