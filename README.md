@@ -1,6 +1,6 @@
 # Equity Watchlist
 
-Spread watchlist is commonly used by professional equity traders to generate stock ideas.
+Spread watchlist is commonly used by equity traders to store themes ideas.
 Therefore, I decided to build one using the Alpha Vantage financial market data API.
 
 ## Table of Contents
