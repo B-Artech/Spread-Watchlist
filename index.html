@@ -40,11 +40,11 @@
             </li>
 
             <li class="watchlist__rows--label">
-                <label class="ticker" for="ticker">Ticker</label>
+                    <label class="ticker" for="ticker">Ticker</label>
                 <div class="watchlist__rows--tickerAdd">
                     <input type="text" id="ticker-one" name="input1" placeholder="eg: AMZN">
                     <input type="text" id="ticker-two" name="input2" placeholder="eg: HRL">
-                    <button class="watchlist__rows--btnAdd" id="PriceBtn">+</button>
+                    <button class="watchlist__rows--btnAdd" id="PriceBtn">ADD</button>
                 </div>
                 <ul class="dropdown" id="searchResults">
                     <!-- <li>AAAFX - One Choice Blend+ 2015 Port USD Class INV</li>
@@ -60,6 +60,11 @@
                 </ul>
             </li>
             <li class="watchlist__rows--label">
+                <label class="spread" for="spread">Entry-Date</label>
+                <input placeholder='Enter Date' class='entryDate' id="entryDate" onfocus="(this.type='date')"
+                    onblur="(this.type='text')">
+            </li>
+            <li class="watchlist__rows--label">
                 <label class="long" for="long">Long-Entry</label>
                 <input type="text" id="long" name="input1" placeholder="Price">
             </li>
@@ -71,11 +76,7 @@
                 <label class="spread" for="spread">Spread-Entry</label>
                 <input type="text" id="spread" name="input" placeholder="Spread">
             </li>
-            <li class="watchlist__rows--label">
-                <label class="spread" for="spread">Entry-Date</label>
-                <input placeholder='Enter Date' class='entryDate' id="entryDate" onfocus="(this.type='date')"
-                    onblur="(this.type='text')">
-            </li>
+         
             <button class="btn" id="addToWatchlist">Add To Watchlist</button>
         </ul>
         <div class="newWatchlistBox">
@@ -126,10 +127,11 @@
                         <li><a href="https://docs.google.com/spreadsheets/d/1FhTAZQwiIqpEHifPgjCQW4PJf9RN-3q4/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true" target=”_blank”>US Stocks</a></li>
                         <li><a href=https://docs.google.com/spreadsheets/d/1hS5aKRLepc_79Q3EfWe1dvd4VbxED9t5/edit?usp=sharing&ouid=114233519661953650920&rtpof=true&sd=true target=”_blank”>DIS Of Return</a></li>
                     </ul>
+                </div>
                 <div class="footer-col">
                     <h4>follow</h4>
                     <div class="social-links">
-                        <a href="https:/https://github.com/B-Artech/Spread-Watchlist/tree/master" target=”_blank”><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/B-Artech/Spread-Watchlist/tree/master" target=”_blank”><i class="fab fa-github"></i></a>
                         <a href="https://twitter.com/Barrtezz84" target=”_blank”><i class="fab fa-twitter"></i></a>
                         <a href="https://www.linkedin.com/in/bartek-staskiewicz-a57b901a/" target=”_blank”><i class="fab fa-linkedin-in"></i></a>
                     </div>
