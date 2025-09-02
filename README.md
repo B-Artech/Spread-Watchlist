@@ -2,6 +2,8 @@
 
 Spread watchlist is commonly used by equity traders to store themes ideas.
 Therefore, I decided to build one using the Alpha Vantage financial market data API.
+<img width="1574" height="271" alt="image" src="https://github.com/user-attachments/assets/ca11b73c-e438-427b-8122-df82b488b82b" />
+
 
 ## Table of Contents
 
